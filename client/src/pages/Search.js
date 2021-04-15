@@ -39,7 +39,7 @@ function Search() {
       {/* <SearchBar onClick={handleSubmit} onChange={handleInputChange}/> */}
       <div className="card">
         <div className="card-body">
-          <h1 className="card-text">Book Search</h1>
+          <h2 className="card-text">Find a book to save!</h2>
           <div className="input-group m-3">
             <input
               type="text"
@@ -69,7 +69,11 @@ function Search() {
                 key={i}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
-                img={book.volumeInfo.imageLinks.thumbnail}
+                img={
+                  book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.thumbnail
+                    : null
+                }
                 desc={book.volumeInfo.description}
                 link={book.volumeInfo.infoLink}
                 id={i}
